@@ -232,22 +232,25 @@ def localize_human(img,x,y,w,h):
     img_height = int(img.shape[0])
     if y < img_height/2 :
         print("avant (caméra avant)")
-    if y > img_height/2 :
-        ratio = Xcenter / img_width
-        position = ratio*360
-        print(f'Humain détecté au degré : {position}')
-        if position < 0 :
-            print("error")
-        if position > 0 and position < 90 :
-            print("arriere gauche")
-        if position > 90 and position < 160 :
-            print("avant gauche")
-        if position > 160 and position < 200 :
-            print("avant")
-        if position > 200 and position < 270 :
-            print("avant droit")
-        if position > 270 and position < 360 :
-            print("arriere droit")    
+    #if y > img_height/2 :
+    ratio = Xcenter / img_width
+    
+    #La position devant est 0°
+    position = ratio*360 - 180
+
+    print(f'Humain détecté au degré : {position}')
+    if position < -180 :
+        print("error")
+    if position >= -180 and position < -90 :
+        print("arriere gauche")
+    if position >= -90 and position < -10 :
+        print("avant gauche")
+    if position >= -10 and position < 10 :
+        print("avant")
+    if position >= 10 and position < 90 :
+        print("avant droit")
+    if position >= 90 and position <= 180 :
+        print("arriere droit")    
 
 def alert_human_detected(img):
     print("Human detected, saving image")
@@ -283,7 +286,7 @@ async def process_frame(client, options, shutdown_flag):
             
             if options.count == 0:
                 fpsCount += 1
-                if fpsCount%6 == 0:
+                if fpsCount%5 == 0:
                     #print(fpsCount)
                     pil_image = frame.to_image()
                     cv_image = np.array(pil_image)
@@ -291,7 +294,11 @@ async def process_frame(client, options, shutdown_flag):
                     width = int(cv_image.shape[1] * scale_percent / 100)
                     height = int(cv_image.shape[0] * scale_percent / 100)
                     dim = (width, height)
-                    cv_image = cv2.resize(cv_image, dim, interpolation=cv2.INTER_AREA)
+                    #cv_image = cv2.resize(cv_image, dim, interpolation=cv2.INTER_AREA)
+                    Imwidth = cv_image.shape[1]
+                    Imheight = cv_image.shape[0]
+                    x = 400
+                    cv_image = cv_image[x : Imheight, 0 : Imwidth]
                     blob = cv2.dnn.blobFromImage(cv_image,1/255,(whT,whT),[0,0,0],1,crop=False)
                     net.setInput(blob)
 
@@ -305,8 +312,10 @@ async def process_frame(client, options, shutdown_flag):
                     #print(outputs[1].shape)
                     #print(outputs[2].shape)
 
-                    print(f'fps : {1/(time.time()-start_time)}')
-                    start_time=time.time()
+
+                    #To Print Fps
+                    #print(f'fps : {1/(time.time()-start_time)}')
+                    #start_time=time.time()
 
 
                     findObjects(outputs,cv_image)

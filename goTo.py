@@ -18,10 +18,11 @@ from bosdyn.client.robot_command import RobotCommandClient, RobotCommandBuilder,
 from bosdyn.client import math_helpers
 from bosdyn.client.frame_helpers import ODOM_FRAME_NAME, VISION_FRAME_NAME, BODY_FRAME_NAME, get_se2_a_tform_b
 from bosdyn.client.lease import LeaseClient, LeaseKeepAlive
+from connect import connect
 from dotenv import load_dotenv
 
 
-def goTo(dx: float = 0,dy: float = 0, dyaw: float = 0,frame=ODOM_FRAME_NAME,stairs:bool=False):
+def goTo(robot,dx: float = 0,dy: float = 0, dyaw: float = 0,frame=ODOM_FRAME_NAME,stairs:bool=False):
     load_dotenv()
     #import argparse
     #parser = argparse.ArgumentParser()
@@ -37,41 +38,32 @@ def goTo(dx: float = 0,dy: float = 0, dyaw: float = 0,frame=ODOM_FRAME_NAME,stai
     #parser.add_argument('--stairs', action='store_true', help='Move the robot in stairs mode.')
     #options = parser.parse_args()
 
-    # Create robot object.
-    sdk = bosdyn.client.create_standard_sdk('RobotCommandMaster')
-    robot = sdk.create_robot(os.getenv("ROBOT_IP"))
-    robot.authenticate(os.getenv('ROBOT_USERNAME'), os.getenv('ROBOT_PASSWORD'))
-
     # Check that an estop is connected with the robot so that the robot commands can be executed.
     assert not robot.is_estopped(), "Robot is estopped. Please use an external E-Stop client, " \
                                     "such as the estop SDK example, to configure E-Stop."
 
     # Create the lease client.
-    lease_client = robot.ensure_client(LeaseClient.default_service_name)
+    #lease_client = robot.ensure_client(LeaseClient.default_service_name)
 
     # Setup clients for the robot state and robot command services.
     robot_state_client = robot.ensure_client(RobotStateClient.default_service_name)
     robot_command_client = robot.ensure_client(RobotCommandClient.default_service_name)
 
-    lease = lease_client.acquire()
+    #lease = lease_client.acquire()
 
-    try :
-        with LeaseKeepAlive(lease_client, return_at_exit=True):
+    #try :
+        #with LeaseKeepAlive(lease_client, return_at_exit=True):
             # Power on the robot and stand it up.
-            robot.time_sync.wait_for_sync()
-            robot.power_on()
-            blocking_stand(robot_command_client)
+           # robot.time_sync.wait_for_sync()
+            #robot.power_on()
+            #blocking_stand(robot_command_client)
 
-            try:
-                return relative_move(dx,dy, math.radians(dyaw),frame,
-                                    robot_command_client, robot_state_client, stairs=stairs)
-            finally:
-                # Send a Stop at the end, regardless of what happened.
-                robot_command_client.robot_command(RobotCommandBuilder.stop_command())
-                
-    finally :
-        lease_client.return_lease(lease)
-    
+    try:
+        return relative_move(dx,dy, math.radians(dyaw),frame,
+                            robot_command_client, robot_state_client, stairs=stairs)
+    finally:
+        # Send a Stop at the end, regardless of what happened.
+        robot_command_client.robot_command(RobotCommandBuilder.stop_command())
 
 
 def relative_move(dx, dy, dyaw, frame_name, robot_command_client, robot_state_client, stairs=False):

@@ -27,7 +27,6 @@ from aiortc.contrib.media import MediaRecorder
 import requests
 
 import cv2
-from goTo import goTo
 import numpy as np
 
 from bosdyn.client.command_line import (Command, Subcommands)
@@ -107,7 +106,7 @@ class WebRTCSaveCommand(Command):
 
         shutdown_flag = threading.Event()
         webrtc_thread = threading.Thread(target=start_webrtc,
-                                         args=[shutdown_flag, options, robot, process_frame], daemon=True)
+                                         args=[shutdown_flag, options, process_frame], daemon=True)
         webrtc_thread.start()
 
         try:
@@ -179,7 +178,7 @@ async def record_webrtc(options, recorder):
 
 
 # WebRTC must be in its own thread with its own event loop.
-def start_webrtc(shutdown_flag, options, robot, process_func, recorder=None):
+def start_webrtc(shutdown_flag, options, process_func, recorder=None):
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
 
@@ -188,11 +187,11 @@ def start_webrtc(shutdown_flag, options, robot, process_func, recorder=None):
                           options.sdp_filename, options.cam_ssl_cert, config,
                           media_recorder=recorder)
 
-    asyncio.gather(client.start(), process_func(client, options,robot, shutdown_flag),
+    asyncio.gather(client.start(), process_func(client, options, shutdown_flag),
                    monitor_shutdown(shutdown_flag, client))
     loop.run_forever()
 
-def findObjects(outputs,img,robot):
+def findObjects(outputs,img):
     hT, wT, cT = img.shape
     bbox = []
     classIds = []
@@ -220,12 +219,12 @@ def findObjects(outputs,img,robot):
         cv2.putText(img,f'{classNames[classIds[i]].upper()} {int(confs[i]*100)}%',(x,y-10), cv2.FONT_HERSHEY_SIMPLEX,0.6,(255,0,255),2)
         if classIds[i] == 0:
             # Only if the camera is only the 360 camera
-            localize_human(img,x,y,w,h,robot)
+            localize_human(img,x,y,w,h)
             alert_human_detected(img)
 
 #Function to localize where the detected human is
 #The full left back being 0 degree and full right back being 360 degrees
-def localize_human(img,x,y,w,h,robot): 
+def localize_human(img,x,y,w,h): 
     print("coucou")
     Xcenter = int(x+(w/2))
     Ycenter = int(y+(h/2))
@@ -253,8 +252,6 @@ def localize_human(img,x,y,w,h,robot):
     if position >= 90 and position <= 180 :
         print("arriere droit")    
 
-    goTo(robot, dyaw=position)
-
 def alert_human_detected(img):
     print("Human detected, saving image")
     dir_path = os.getcwd()
@@ -267,7 +264,7 @@ def alert_human_detected(img):
     print(cv2.imwrite(filename, img))
 
 # Frame processing occurs; otherwise it waits.
-async def process_frame(client, options,robot, shutdown_flag):
+async def process_frame(client, options, shutdown_flag):
 
     #Define IA
     
@@ -300,18 +297,14 @@ async def process_frame(client, options,robot, shutdown_flag):
                     #cv_image = cv2.resize(cv_image, dim, interpolation=cv2.INTER_AREA)
                     Imwidth = cv_image.shape[1]
                     Imheight = cv_image.shape[0]
-
                     x = 400
                     cv_image = cv_image[x : Imheight, 0 : Imwidth]
-
                     blob = cv2.dnn.blobFromImage(cv_image,1/255,(whT,whT),[0,0,0],1,crop=False)
                     net.setInput(blob)
 
                     layerNames = net.getLayerNames()
                     #print(layerNames)
-                    print("chatte")
                     outputNames = [layerNames[i[0]-1] for i in net.getUnconnectedOutLayers()]
-                    print("bite")
                     #print(outputNames)
                     #print(net.getUnconnectedOutLayers())
                     outputs = net.forward(outputNames)
@@ -324,9 +317,8 @@ async def process_frame(client, options,robot, shutdown_flag):
                     #print(f'fps : {1/(time.time()-start_time)}')
                     #start_time=time.time()
 
-                    print("coucou8")
 
-                    findObjects(outputs,cv_image, robot)
+                    findObjects(outputs,cv_image)
                     cv_image = cv2.cvtColor(cv_image, cv2.COLOR_RGB2BGR)
                     cv2.imshow('display', cv_image)
                     

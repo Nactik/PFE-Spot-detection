@@ -1,0 +1,1236 @@
+INFO:root:Starting lease check-in
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 36346) -> ('192.168.50.6', 31069)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 36346) -> ('10.0.0.3', 31009)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 36346) -> ('192.168.50.6', 31069)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 36346) -> ('10.0.0.3', 31009)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 36346) -> ('192.168.80.3', 31043)) State.FROZEN -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 36346) -> ('192.168.80.3', 31043)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(70w37DMKsy 1 udp 2130706431 192.168.80.3 31069 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 36346) -> ('192.168.80.3', 31069)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(gWbt5Xjw2e 1 udp 1694498815 192.168.80.3 31009 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 36346) -> ('192.168.80.3', 31009)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 36346) -> ('192.168.80.3', 31069)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 36346) -> ('192.168.80.3', 31009)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+INFO:ice:Connection(0) Consent to send expired
+INFO:root:Lease check-in stopped
+ERROR:stderr:Traceback (most recent call last):
+
+ERROR:stderr:  File "/usr/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+
+ERROR:stderr:    
+ERROR:stderr:"__main__", mod_spec)
+ERROR:stderr:
+
+ERROR:stderr:  File "/usr/lib/python3.6/runpy.py", line 85, in _run_code
+
+ERROR:stderr:    
+ERROR:stderr:exec(code, run_globals)
+ERROR:stderr:
+
+ERROR:stderr:  File "/home/nathan/infive/PFE-Spot-detection/command_line.py", line 85, in <module>
+
+ERROR:stderr:    
+ERROR:stderr:main()
+ERROR:stderr:
+
+ERROR:stderr:  File "/home/nathan/infive/PFE-Spot-detection/command_line.py", line 78, in main
+
+ERROR:stderr:    
+ERROR:stderr:robot_command_client.robot_command(RobotCommandBuilder.stop_command())
+ERROR:stderr:
+
+ERROR:stderr:  File "/home/nathan/spot/lib/python3.6/site-packages/bosdyn/client/robot_command.py", line 322, in robot_command
+
+ERROR:stderr:    
+ERROR:stderr:**kwargs)
+ERROR:stderr:
+
+ERROR:stderr:  File "/home/nathan/spot/lib/python3.6/site-packages/bosdyn/client/common.py", line 235, in processor
+
+ERROR:stderr:    
+ERROR:stderr:error_from_response=error_from_response, **kwargs)
+ERROR:stderr:
+
+ERROR:stderr:  File "/home/nathan/spot/lib/python3.6/site-packages/bosdyn/client/common.py", line 357, in call
+
+ERROR:stderr:    
+ERROR:stderr:return self.handle_response(response, error_from_response, value_from_response)
+ERROR:stderr:
+
+ERROR:stderr:  File "/home/nathan/spot/lib/python3.6/site-packages/bosdyn/client/common.py", line 365, in handle_response
+
+ERROR:stderr:    
+ERROR:stderr:raise exc  # pylint: disable=raising-bad-type
+ERROR:stderr:
+
+ERROR:stderr:bosdyn.client.robot_command
+ERROR:stderr:.
+ERROR:stderr:NotPoweredOnError
+ERROR:stderr:: 
+ERROR:stderr:bosdyn.api.RobotCommandResponse (NotPoweredOnError): The robot must be powered on to accept a command.
+ERROR:stderr:
+
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending coro=<_on_ice_connection_state_change() running at /home/nathan/infive/PFE-Spot-detection/webrtc_client.py:99> cb=[AsyncIOEventEmitter._emit_run.<locals>._callback() at /home/nathan/spot/lib/python3.6/site-packages/pyee/_asyncio.py:57]>
+ERROR:stderr:/usr/lib/python3.6/asyncio/base_events.py:509: RuntimeWarning: coroutine '_on_ice_connection_state_change' was never awaited
+  self._ready.clear()
+
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44172) -> ('192.168.50.6', 31034)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44172) -> ('192.168.80.3', 31004)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44172) -> ('192.168.50.6', 31034)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44172) -> ('192.168.80.3', 31004)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44172) -> ('192.168.80.3', 31004)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44172) -> ('10.0.0.3', 31002)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(XdUfhirk6U 1 udp 2130706431 192.168.80.3 31034 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44172) -> ('192.168.80.3', 31034)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(2GbY9j79yb 1 udp 1694498815 192.168.80.3 31002 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44172) -> ('192.168.80.3', 31002)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44172) -> ('192.168.80.3', 31034)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44172) -> ('192.168.80.3', 31002)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44172) -> ('10.0.0.3', 31002)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 60736) -> ('192.168.50.6', 31015)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 60736) -> ('192.168.80.3', 31081)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 60736) -> ('192.168.50.6', 31015)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 60736) -> ('192.168.80.3', 31081)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 60736) -> ('192.168.80.3', 31081)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 60736) -> ('10.0.0.3', 31098)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(HkmFitXVcb 1 udp 2130706431 192.168.80.3 31015 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 60736) -> ('192.168.80.3', 31015)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(yIIj7qVRyp 1 udp 1694498815 192.168.80.3 31098 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 60736) -> ('192.168.80.3', 31098)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 60736) -> ('192.168.80.3', 31015)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 60736) -> ('192.168.80.3', 31098)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 60736) -> ('10.0.0.3', 31098)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37649) -> ('192.168.50.6', 31090)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37649) -> ('192.168.80.3', 31039)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37649) -> ('192.168.50.6', 31090)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37649) -> ('192.168.80.3', 31039)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37649) -> ('192.168.80.3', 31039)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37649) -> ('10.0.0.3', 31041)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(fCCdo2KK7P 1 udp 2130706431 192.168.80.3 31090 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37649) -> ('192.168.80.3', 31090)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(NjjmyZejfp 1 udp 1694498815 192.168.80.3 31041 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37649) -> ('192.168.80.3', 31041)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37649) -> ('192.168.80.3', 31090)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37649) -> ('192.168.80.3', 31041)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37649) -> ('10.0.0.3', 31041)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:root:Lease check-in stopped
+ERROR:asyncio:_GatheringFuture exception was never retrieved
+future: <_GatheringFuture finished exception=JSONDecodeError('Expecting value: line 1 column 1 (char 0)',)>
+Traceback (most recent call last):
+  File "/home/nathan/infive/PFE-Spot-detection/webrtc_client.py", line 85, in start
+    offer_id, sdp_offer = self.get_sdp_offer_from_spot_cam(token)
+  File "/home/nathan/infive/PFE-Spot-detection/webrtc_client.py", line 66, in get_sdp_offer_from_spot_cam
+    result = response.json()
+  File "/home/nathan/spot/lib/python3.6/site-packages/requests/models.py", line 898, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.6/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.6/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41719) -> ('192.168.50.6', 31037)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41719) -> ('192.168.80.3', 31067)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41719) -> ('192.168.50.6', 31037)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41719) -> ('192.168.80.3', 31067)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41719) -> ('192.168.80.3', 31067)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41719) -> ('10.0.0.3', 31046)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(QK2TgcwMGq 1 udp 2130706431 192.168.80.3 31037 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41719) -> ('192.168.80.3', 31037)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(pGikw2Il2B 1 udp 1694498815 192.168.80.3 31046 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41719) -> ('192.168.80.3', 31046)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41719) -> ('10.0.0.3', 31046)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41719) -> ('192.168.80.3', 31037)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41719) -> ('192.168.80.3', 31046)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 47482) -> ('192.168.50.6', 31044)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 47482) -> ('192.168.80.3', 31073)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 47482) -> ('192.168.50.6', 31044)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 47482) -> ('192.168.80.3', 31073)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 47482) -> ('10.0.0.3', 31045)) State.FROZEN -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 47482) -> ('192.168.80.3', 31073)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(PeBBOkTwgp 1 udp 2130706431 192.168.80.3 31044 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 47482) -> ('192.168.80.3', 31044)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(qpd7pBXRE0 1 udp 1694498815 192.168.80.3 31045 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 47482) -> ('192.168.80.3', 31045)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 47482) -> ('192.168.80.3', 31044)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 47482) -> ('192.168.80.3', 31045)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 53554) -> ('192.168.50.6', 31038)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 53554) -> ('192.168.80.3', 31058)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 53554) -> ('192.168.50.6', 31038)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 53554) -> ('192.168.80.3', 31058)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 53554) -> ('192.168.80.3', 31058)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 53554) -> ('10.0.0.3', 31073)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(NqcQ6ax7uF 1 udp 2130706431 192.168.80.3 31038 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 53554) -> ('192.168.80.3', 31038)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(je69PIe7dl 1 udp 1694498815 192.168.80.3 31073 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 53554) -> ('192.168.80.3', 31073)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 53554) -> ('192.168.80.3', 31038)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 53554) -> ('192.168.80.3', 31073)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 53554) -> ('10.0.0.3', 31073)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37972) -> ('192.168.50.6', 31066)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37972) -> ('192.168.80.3', 31060)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37972) -> ('192.168.50.6', 31066)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37972) -> ('192.168.80.3', 31060)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37972) -> ('192.168.80.3', 31060)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37972) -> ('10.0.0.3', 31017)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(1EgcU4HUqn 1 udp 2130706431 192.168.80.3 31066 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37972) -> ('192.168.80.3', 31066)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(1xzNA9qbtn 1 udp 1694498815 192.168.80.3 31017 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37972) -> ('192.168.80.3', 31017)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37972) -> ('192.168.80.3', 31066)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37972) -> ('192.168.80.3', 31017)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37972) -> ('10.0.0.3', 31017)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37809) -> ('192.168.50.6', 31082)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37809) -> ('192.168.80.3', 31062)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37809) -> ('192.168.50.6', 31082)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37809) -> ('192.168.80.3', 31062)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37809) -> ('192.168.80.3', 31062)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37809) -> ('10.0.0.3', 31045)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37809) -> ('10.0.0.3', 31045)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(yhP99PRzCk 1 udp 2130706431 192.168.80.3 31082 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37809) -> ('192.168.80.3', 31082)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(lnX8vruHtm 1 udp 1694498815 192.168.80.3 31045 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37809) -> ('192.168.80.3', 31045)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37809) -> ('192.168.80.3', 31082)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 37809) -> ('192.168.80.3', 31045)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 50097) -> ('192.168.50.6', 31024)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 50097) -> ('192.168.80.3', 31093)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 50097) -> ('192.168.50.6', 31024)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 50097) -> ('192.168.80.3', 31093)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 50097) -> ('192.168.80.3', 31093)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 50097) -> ('10.0.0.3', 31054)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(QRzdAEJPj4 1 udp 2130706431 192.168.80.3 31024 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 50097) -> ('192.168.80.3', 31024)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(hWN4stY9p4 1 udp 1694498815 192.168.80.3 31054 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 50097) -> ('192.168.80.3', 31054)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 50097) -> ('192.168.80.3', 31024)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 50097) -> ('192.168.80.3', 31054)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 50097) -> ('10.0.0.3', 31054)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 40904) -> ('192.168.50.6', 31086)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 40904) -> ('192.168.80.3', 31011)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 40904) -> ('192.168.50.6', 31086)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 40904) -> ('192.168.80.3', 31011)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 40904) -> ('192.168.80.3', 31011)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 40904) -> ('10.0.0.3', 31008)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(Gw558ERPot 1 udp 2130706431 192.168.80.3 31086 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 40904) -> ('192.168.80.3', 31086)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(lXRdT6bbn4 1 udp 1694498815 192.168.80.3 31008 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 40904) -> ('192.168.80.3', 31008)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 40904) -> ('192.168.80.3', 31086)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 40904) -> ('192.168.80.3', 31008)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 40904) -> ('10.0.0.3', 31008)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41061) -> ('192.168.50.6', 31005)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41061) -> ('192.168.80.3', 31081)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41061) -> ('192.168.50.6', 31005)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41061) -> ('192.168.80.3', 31081)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41061) -> ('10.0.0.3', 31045)) State.FROZEN -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41061) -> ('192.168.80.3', 31081)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(iKR9hybVb1 1 udp 2130706431 192.168.80.3 31005 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41061) -> ('192.168.80.3', 31005)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(yfQRGTyiJl 1 udp 1694498815 192.168.80.3 31045 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41061) -> ('192.168.80.3', 31045)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41061) -> ('192.168.80.3', 31005)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 41061) -> ('192.168.80.3', 31045)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+INFO:root:Lease check-in stopped
+INFO:root:Starting lease check-in
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44470) -> ('192.168.50.6', 31098)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44470) -> ('192.168.80.3', 31094)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44470) -> ('192.168.50.6', 31098)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44470) -> ('192.168.80.3', 31094)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44470) -> ('192.168.80.3', 31094)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44470) -> ('10.0.0.3', 31034)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(se06XWXBai 1 udp 2130706431 192.168.80.3 31098 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44470) -> ('192.168.80.3', 31098)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(Y3xbrjSRgR 1 udp 1694498815 192.168.80.3 31034 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44470) -> ('192.168.80.3', 31034)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44470) -> ('192.168.80.3', 31098)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44470) -> ('192.168.80.3', 31034)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 44470) -> ('10.0.0.3', 31034)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+INFO:root:Lease check-in stopped
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:211: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  _openssl_assert(lib.SSL_CTX_use_certificate(ctx, self._cert._x509) == 1)  # type: ignore
+
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/aiortc/rtcdtlstransport.py:186: CryptographyDeprecationWarning: This version of cryptography contains a temporary pyOpenSSL fallback path. Upgrade pyOpenSSL now.
+  value=certificate_digest(self._cert._x509),  # type: ignore
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 46250) -> ('192.168.50.6', 31002)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 46250) -> ('192.168.80.3', 31084)) State.FROZEN -> State.WAITING
+ERROR:stderr:/home/nathan/spot/lib/python3.6/site-packages/urllib3/connectionpool.py:988: InsecureRequestWarning: Unverified HTTPS request is being made to host '192.168.80.3'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 46250) -> ('192.168.50.6', 31002)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 46250) -> ('192.168.80.3', 31084)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 46250) -> ('192.168.80.3', 31084)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 46250) -> ('10.0.0.3', 31082)) State.FROZEN -> State.WAITING
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(NJ9I76vTwq 1 udp 2130706431 192.168.80.3 31002 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 46250) -> ('192.168.80.3', 31002)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Discovered peer reflexive candidate Candidate(owImdIy3Tk 1 udp 1694498815 192.168.80.3 31082 typ prflx)
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 46250) -> ('192.168.80.3', 31082)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 46250) -> ('192.168.80.3', 31002)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 46250) -> ('192.168.80.3', 31082)) State.IN_PROGRESS -> State.SUCCEEDED
+INFO:ice:Connection(0) Check CandidatePair(('10.211.55.5', 46250) -> ('10.0.0.3', 31082)) State.WAITING -> State.IN_PROGRESS
+INFO:ice:Connection(0) ICE completed
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!
+ERROR:libav.h264:non-existing PPS 0 referenced
+ERROR:libav.h264:decode_slice_header error
+ERROR:libav.h264:no frame!
+WARNING:codec.h264:failed to decode, skipping package: [Errno 1094995529] Invalid data found when processing input; last error log: [h264] no frame!

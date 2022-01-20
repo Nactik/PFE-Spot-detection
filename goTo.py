@@ -14,16 +14,12 @@ from bosdyn.api.basic_command_pb2 import RobotCommandFeedbackStatus
 import bosdyn.client
 import bosdyn.client.util
 from bosdyn.client.robot_state import RobotStateClient
-from bosdyn.client.robot_command import RobotCommandClient, RobotCommandBuilder, blocking_stand
+from bosdyn.client.robot_command import RobotCommandClient, RobotCommandBuilder
 from bosdyn.client import math_helpers
 from bosdyn.client.frame_helpers import ODOM_FRAME_NAME, VISION_FRAME_NAME, BODY_FRAME_NAME, get_se2_a_tform_b
-from bosdyn.client.lease import LeaseClient, LeaseKeepAlive
-from connect import connect
-from dotenv import load_dotenv
 
 
 def goTo(robot,dx: float = 0,dy: float = 0, dyaw: float = 0,frame=ODOM_FRAME_NAME,stairs:bool=False):
-    load_dotenv()
     #import argparse
     #parser = argparse.ArgumentParser()
     #bosdyn.client.util.add_common_arguments(parser)
@@ -39,8 +35,6 @@ def goTo(robot,dx: float = 0,dy: float = 0, dyaw: float = 0,frame=ODOM_FRAME_NAM
     #options = parser.parse_args()
 
     # Check that an estop is connected with the robot so that the robot commands can be executed.
-    assert not robot.is_estopped(), "Robot is estopped. Please use an external E-Stop client, " \
-                                    "such as the estop SDK example, to configure E-Stop."
 
     # Create the lease client.
     #lease_client = robot.ensure_client(LeaseClient.default_service_name)

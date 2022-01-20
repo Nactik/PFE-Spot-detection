@@ -16,6 +16,8 @@ from bosdyn.client import spot_cam
 from bosdyn.client.lease import LeaseClient, LeaseKeepAlive
 from bosdyn.client.robot_command import RobotCommandClient, RobotCommandBuilder, blocking_stand
 from bosdyn.client.robot_state import RobotStateClient
+from bosdyn.client.spot_cam.audio import AudioClient
+from bosdyn.api.spot_cam import audio_pb2
 from connect import connect
 
 
@@ -57,6 +59,14 @@ def main(args=None):
 
     robot_state_client = robot2.ensure_client(RobotStateClient.default_service_name)
     robot_command_client = robot2.ensure_client(RobotCommandClient.default_service_name)
+
+    sound = audio_pb2.Sound(name='bark')
+    with open("asset/dog-bark4.wav", 'rb') as fh:
+        data = fh.read()
+    
+    robot_audio_client = robot2.ensure_client(AudioClient.default_service_name)
+    robot_audio_client.load_sound(sound, data)
+
     lease_client, lease = acquireLease(robot2);
 
     try :

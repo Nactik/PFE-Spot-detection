@@ -29,8 +29,13 @@ import requests
 import cv2
 from goTo import goTo
 import numpy as np
+import torch
+import pandas as pd
+
 
 from bosdyn.client.command_line import (Command, Subcommands)
+from bosdyn.client.spot_cam.audio import AudioClient
+from bosdyn.api.spot_cam import audio_pb2
 from webrtc_client import WebRTCClient
 
 logging.basicConfig(level=logging.DEBUG, filename='webrtc.log', filemode='a+')
@@ -41,7 +46,9 @@ whT = 320
 confThreshold = 0.5
 nmsThreshold = 0.3
 
-classesFile = 'coco.names'
+moving = False
+
+classesFile = 'model/coco.names'
 classNames = []
 with open(classesFile,'rt') as f:
     classNames = f.read().rstrip('\n').split('\n')
@@ -51,12 +58,7 @@ with open(classesFile,'rt') as f:
 #modelConfiguration = 'yolov3-tiny.cfg'
 #modelWeights = 'yolov3-tiny.weights'
 
-modelConfiguration = 'yolov36.cfg'
-modelWeights = 'yolov36.weights'
-
-net = cv2.dnn.readNetFromDarknet(modelConfiguration,modelWeights)
-net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
-net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
+model = torch.hub.load('../yolov5', 'custom', path='../yolov5/yolov5s.pt', source='local')  # local repo
 
 
 class InterceptStdErr:
@@ -194,39 +196,29 @@ def start_webrtc(shutdown_flag, options, robot, process_func, recorder=None):
 
 def findObjects(outputs,img,robot):
     hT, wT, cT = img.shape
-    bbox = []
-    classIds = []
-    confs = []
+    humans = outputs.loc[(outputs["class"] == 0) & (outputs["confidence"] >= 0.5)  ]
+   
+    if not humans.empty : 
+        for i in range(len(humans)):
+            label = f'{humans.loc[i,"name"]} {humans.loc[i,"confidence"]:.2f}'
 
-    for output in outputs:
-        for det in output:
-            scores = det[5:]
-            classId = np.argmax(scores)
-            confidence = scores[classId]
-            if confidence > confThreshold:
-                w,h = int(det[2]*wT), int(det[3]*hT)
-                x,y = int((det[0]*wT)-w/2), int((det[1]*hT)-h/2)
-                bbox.append([x,y,w,h])
-                classIds.append(classId)
-                confs.append(float(confidence))
-    #print(len(bbox))
-    indices = cv2.dnn.NMSBoxes(bbox,confs,confThreshold,nmsThreshold)
+            x = int(humans.loc[i,"xmin"])
+            y = int(humans.loc[i,"ymin"])
 
-    for i in indices:
-        i = i[0]
-        box = bbox[i]
-        x,y,w,h = box[0],box[1],box[2],box[3]
-        cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,255),2)
-        cv2.putText(img,f'{classNames[classIds[i]].upper()} {int(confs[i]*100)}%',(x,y-10), cv2.FONT_HERSHEY_SIMPLEX,0.6,(255,0,255),2)
-        if classIds[i] == 0:
-            # Only if the camera is only the 360 camera
-            localize_human(img,x,y,w,h,robot)
-            alert_human_detected(img)
+            w = int(humans.loc[i,"xmax"]) - x
+            h = int(humans.loc[i,"ymax"]) - y
+
+            cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,255),2)
+            cv2.putText(img,label,(x,y-10), cv2.FONT_HERSHEY_SIMPLEX,0.6,(255,0,255),2)
+
+        
+        localize_human(img,x,y,w,h,robot)
+        alert_human_detected(img)
 
 #Function to localize where the detected human is
 #The full left back being 0 degree and full right back being 360 degrees
 def localize_human(img,x,y,w,h,robot): 
-    print("coucou")
+    global moving
     Xcenter = int(x+(w/2))
     Ycenter = int(y+(h/2))
     img_width = int(img.shape[1])
@@ -253,7 +245,17 @@ def localize_human(img,x,y,w,h,robot):
     if position >= 90 and position <= 180 :
         print("arriere droit")    
 
+    robot_audio_client = robot.ensure_client(AudioClient.default_service_name)
+    robot_audio_client.set_volume(90.0)
+    sound = audio_pb2.Sound(name='bark')
+    gain = 20
+    if gain:
+        gain = max(gain, 0.0)
+
+    robot_audio_client.play_sound(sound, gain)
+
     goTo(robot, dyaw=position)
+
 
 def alert_human_detected(img):
     print("Human detected, saving image")
@@ -289,7 +291,7 @@ async def process_frame(client, options,robot, shutdown_flag):
             
             if options.count == 0:
                 fpsCount += 1
-                if fpsCount%5 == 0:
+                if 0 == 0:
                     #print(fpsCount)
                     pil_image = frame.to_image()
                     cv_image = np.array(pil_image)
@@ -304,29 +306,10 @@ async def process_frame(client, options,robot, shutdown_flag):
                     x = 400
                     cv_image = cv_image[x : Imheight, 0 : Imwidth]
 
-                    blob = cv2.dnn.blobFromImage(cv_image,1/255,(whT,whT),[0,0,0],1,crop=False)
-                    net.setInput(blob)
+                    outputs = model(cv_image)
+                    outputDf = outputs.pandas().xyxy[0]
 
-                    layerNames = net.getLayerNames()
-                    #print(layerNames)
-                    print("chatte")
-                    outputNames = [layerNames[i[0]-1] for i in net.getUnconnectedOutLayers()]
-                    print("bite")
-                    #print(outputNames)
-                    #print(net.getUnconnectedOutLayers())
-                    outputs = net.forward(outputNames)
-                    #print(outputs[0].shape)
-                    #print(outputs[1].shape)
-                    #print(outputs[2].shape)
-
-
-                    #To Print Fps
-                    #print(f'fps : {1/(time.time()-start_time)}')
-                    #start_time=time.time()
-
-                    print("coucou8")
-
-                    findObjects(outputs,cv_image, robot)
+                    findObjects(outputDf,cv_image, robot)
                     cv_image = cv2.cvtColor(cv_image, cv2.COLOR_RGB2BGR)
                     cv2.imshow('display', cv_image)
                     

@@ -119,67 +119,6 @@ class WebRTCSaveCommand(Command):
             shutdown_flag.set()
             webrtc_thread.join(timeout=3.0)
 
-
-class WebRTCRecordCommand(Command):
-    """Save webrtc stream as video or audio"""
-
-    NAME = 'record'
-
-    def __init__(self, subparsers, command_dict):
-        super(WebRTCRecordCommand, self).__init__(subparsers, command_dict)
-        self._parser.add_argument('track', default='video', const='video', nargs='?',
-                                  choices=['video', 'audio'])
-        self._parser.add_argument('--sdp-filename', default='h264.sdp',
-                                  help='File being streamed from WebRTC server')
-        self._parser.add_argument('--sdp-port', default=31102, help='SDP port of WebRTC server')
-        self._parser.add_argument('--cam-ssl-cert', default=None,
-                                  help="Spot CAM's client cert path to check with Spot CAM server")
-        self._parser.add_argument('--dst-prefix', default='h264.sdp',
-                                  help='Filename prefix to prepend to all output data')
-        self._parser.add_argument('--time', type=int, default=10,
-                                  help='Number of seconds to record.')
-
-    def _run(self, robot, options):
-        # Suppress all exceptions and log them instead.
-        sys.stderr = InterceptStdErr()
-
-        if not options.cam_ssl_cert:
-            options.cam_ssl_cert = False
-
-        if options.track == 'video':
-            recorder = MediaRecorder(f'{options.dst_prefix}.mp4')
-        else:
-            recorder = MediaRecorder(f'{options.dst_prefix}.wav')
-
-        # run event loop
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(record_webrtc(options, recorder))
-
-
-# WebRTC must be in its own thread with its own event loop.
-async def record_webrtc(options, recorder):
-    config = RTCConfiguration(iceServers=[])
-    client = WebRTCClient(options.hostname, options.username, options.password, options.sdp_port,
-                          options.sdp_filename, options.cam_ssl_cert, config,
-                          media_recorder=recorder, recorder_type=options.track)
-    await client.start()
-
-    # wait for connection to be established before recording
-    while client.pc.iceConnectionState != 'completed':
-        await asyncio.sleep(0.1)
-
-    # start recording
-    await recorder.start()
-    try:
-        await asyncio.sleep(options.time)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        # close everything
-        await client.pc.close()
-        await recorder.stop()
-
-
 # WebRTC must be in its own thread with its own event loop.
 def start_webrtc(shutdown_flag, options, robot, process_func, recorder=None):
     loop = asyncio.new_event_loop()
@@ -199,6 +138,7 @@ def findObjects(outputs,img,robot):
     humans = outputs.loc[(outputs["class"] == 0) & (outputs["confidence"] >= 0.5)  ]
    
     if not humans.empty : 
+        #Ce bloc la peut dégager si jamais 
         for i in range(len(humans)):
             label = f'{humans.loc[i,"name"]} {humans.loc[i,"confidence"]:.2f}'
 
@@ -211,8 +151,16 @@ def findObjects(outputs,img,robot):
             cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,255),2)
             cv2.putText(img,label,(x,y-10), cv2.FONT_HERSHEY_SIMPLEX,0.6,(255,0,255),2)
 
-        
-        localize_human(img,x,y,w,h,robot)
+        # on récupère l'human avec le plus de confidence
+        mostConfident = humans.iloc[humans['confidence'].idxmax()]
+
+        xMostConf = int(mostConfident.loc[:,"xmin"])
+        yMostConf = int(mostConfident.loc[:,"ymin"])
+
+        wMostConf = int(humans.loc[:,"xmax"]) - xMostConf
+        hMostConf = int(humans.loc[:,"ymax"]) - yMostConf
+
+        localize_human(img,xMostConf,yMostConf,wMostConf,hMostConf,robot)
         alert_human_detected(img)
 
 #Function to localize where the detected human is
@@ -245,16 +193,22 @@ def localize_human(img,x,y,w,h,robot):
     if position >= 90 and position <= 180 :
         print("arriere droit")    
 
-    robot_audio_client = robot.ensure_client(AudioClient.default_service_name)
-    robot_audio_client.set_volume(90.0)
-    sound = audio_pb2.Sound(name='bark')
-    gain = 20
-    if gain:
-        gain = max(gain, 0.0)
+    if not moving : 
+        moving = True
 
-    robot_audio_client.play_sound(sound, gain)
+        ##On bouge
+        goTo(robot, dyaw=position)
 
-    goTo(robot, dyaw=position)
+        # On abboie
+        robot_audio_client = robot.ensure_client(AudioClient.default_service_name)
+        robot_audio_client.set_volume(90.0)
+        sound = audio_pb2.Sound(name='bark')
+        gain = 0.5
+        if gain:
+            gain = max(gain, 0.0)
+
+        robot_audio_client.play_sound(sound, gain)
+        moving = False
 
 
 def alert_human_detected(img):

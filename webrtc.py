@@ -154,11 +154,15 @@ def findObjects(outputs,img,robot):
         # on récupère l'human avec le plus de confidence
         mostConfident = humans.iloc[humans['confidence'].idxmax()]
 
-        xMostConf = int(mostConfident.loc[:,"xmin"])
-        yMostConf = int(mostConfident.loc[:,"ymin"])
+        print(mostConfident)
 
-        wMostConf = int(humans.loc[:,"xmax"]) - xMostConf
-        hMostConf = int(humans.loc[:,"ymax"]) - yMostConf
+        xMostConf = int(mostConfident["xmin"])
+        yMostConf = int(mostConfident["ymin"])
+
+        wMostConf = int(mostConfident["xmax"]) - xMostConf
+        hMostConf = int(mostConfident["ymax"]) - yMostConf
+
+        print(f'X most Confident : {xMostConf}')
 
         localize_human(img,xMostConf,yMostConf,wMostConf,hMostConf,robot)
         alert_human_detected(img)

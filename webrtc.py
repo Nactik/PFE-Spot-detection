@@ -78,7 +78,7 @@ class WebRTCCommands(Subcommands):
 
     def __init__(self, subparsers, command_dict):
         super(WebRTCCommands, self).__init__(subparsers, command_dict,
-                                             [WebRTCSaveCommand, WebRTCRecordCommand])
+                                             [WebRTCSaveCommand])
 
 
 class WebRTCSaveCommand(Command):
@@ -191,7 +191,9 @@ def localize_human(img,x,y,w,h,robot):
     if position >= 10 and position < 90 :
         print("avant droit")
     if position >= 90 and position <= 180 :
-        print("arriere droit")    
+        print("arriere droit") 
+
+    print(f'Moving : {moving}')   
 
     if not moving : 
         moving = True
@@ -200,27 +202,30 @@ def localize_human(img,x,y,w,h,robot):
         goTo(robot, dyaw=position)
 
         # On abboie
-        robot_audio_client = robot.ensure_client(AudioClient.default_service_name)
-        robot_audio_client.set_volume(90.0)
-        sound = audio_pb2.Sound(name='bark')
-        gain = 0.5
-        if gain:
-            gain = max(gain, 0.0)
+        #robot_audio_client = robot.ensure_client(AudioClient.default_service_name)
+        ##robot_audio_client.set_volume(90.0)
+        #sound = audio_pb2.Sound(name='bark')
+       # gain = 0.5
+        #if gain:
+        #    gain = max(gain, 0.0)
 
-        robot_audio_client.play_sound(sound, gain)
+        #robot_audio_client.play_sound(sound, gain)
         moving = False
 
 
 def alert_human_detected(img):
-    print("Human detected, saving image")
-    dir_path = os.getcwd()
-    print(dir_path)
-    #dir_path = dir_path.replace(os.sep, '/')
-    dt_string = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-    filename = dir_path+"/images/human_"+dt_string+".png"
-    #print(filename)
-    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
-    print(cv2.imwrite(filename, img))
+    global moving
+
+    if not moving : 
+        print("Human detected, saving image")
+        dir_path = os.getcwd()
+        print(dir_path)
+        #dir_path = dir_path.replace(os.sep, '/')
+        dt_string = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+        filename = dir_path+"/images/human_"+dt_string+".png"
+        #print(filename)
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+        print(cv2.imwrite(filename, img))
 
 # Frame processing occurs; otherwise it waits.
 async def process_frame(client, options,robot, shutdown_flag):

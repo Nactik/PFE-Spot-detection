@@ -62,11 +62,11 @@ def main(args=None):
     robot_audio_client = robot.ensure_client(AudioClient.default_service_name)
 
 
-    sound = audio_pb2.Sound(name='bark')
-    with open("asset/dog-bark4.wav", 'rb') as fh:
-        data = fh.read()
+    #sound = audio_pb2.Sound(name='bark')
+    #with open("assets/dog-bark4.wav", 'rb') as fh:
+    #    data = fh.read()
     
-    robot_audio_client.load_sound(sound, data)
+    #robot_audio_client.load_sound(sound, data)
 
     lease_client, lease = acquireLease(robot);
 

@@ -32,11 +32,14 @@ import torch
 import pandas as pd
 from bosdyn.client.command_line import (Command, Subcommands)
 from webrtc_client import WebRTCClient
+from goTo import goTo
 
 logging.basicConfig(level=logging.DEBUG, filename='webrtc.log', filemode='a+')
 STDERR = logging.getLogger('stderr')
 
+moving = False
 whT = 320
+lastPostion = 0;
 
 confThreshold = 0.5
 nmsThreshold = 0.3
@@ -45,14 +48,6 @@ classesFile = 'model/coco.names'
 classNames = []
 with open(classesFile,'rt') as f:
     classNames = f.read().rstrip('\n').split('\n')
-# print(classNames)
-# print(len(classNames))
-
-#modelConfiguration = 'yolov3-tiny.cfg'
-#modelWeights = 'yolov3-tiny.weights'
-
-#modelConfiguration = 'yolov36.cfg'
-#modelWeights = 'yolov36.weights'
  
 model = torch.hub.load('../yolov5', 'custom', path='../yolov5/yolov5s.pt', source='local')  # local repo
 
@@ -75,7 +70,7 @@ class WebRTCCommands(Subcommands):
 
     def __init__(self, subparsers, command_dict):
         super(WebRTCCommands, self).__init__(subparsers, command_dict,
-                                             [WebRTCSaveCommand, WebRTCRecordCommand])
+                                             [WebRTCSaveCommand])
 
 
 class WebRTCSaveCommand(Command):
@@ -106,7 +101,7 @@ class WebRTCSaveCommand(Command):
 
         shutdown_flag = threading.Event()
         webrtc_thread = threading.Thread(target=start_webrtc,
-                                         args=[shutdown_flag, options, process_frame], daemon=True)
+                                         args=[shutdown_flag, options, robot,process_frame], daemon=True)
         webrtc_thread.start()
 
         try:
@@ -116,69 +111,8 @@ class WebRTCSaveCommand(Command):
             shutdown_flag.set()
             webrtc_thread.join(timeout=3.0)
 
-
-class WebRTCRecordCommand(Command):
-    """Save webrtc stream as video or audio"""
-
-    NAME = 'record'
-
-    def __init__(self, subparsers, command_dict):
-        super(WebRTCRecordCommand, self).__init__(subparsers, command_dict)
-        self._parser.add_argument('track', default='video', const='video', nargs='?',
-                                  choices=['video', 'audio'])
-        self._parser.add_argument('--sdp-filename', default='h264.sdp',
-                                  help='File being streamed from WebRTC server')
-        self._parser.add_argument('--sdp-port', default=31102, help='SDP port of WebRTC server')
-        self._parser.add_argument('--cam-ssl-cert', default=None,
-                                  help="Spot CAM's client cert path to check with Spot CAM server")
-        self._parser.add_argument('--dst-prefix', default='h264.sdp',
-                                  help='Filename prefix to prepend to all output data')
-        self._parser.add_argument('--time', type=int, default=10,
-                                  help='Number of seconds to record.')
-
-    def _run(self, robot, options):
-        # Suppress all exceptions and log them instead.
-        sys.stderr = InterceptStdErr()
-
-        if not options.cam_ssl_cert:
-            options.cam_ssl_cert = False
-
-        if options.track == 'video':
-            recorder = MediaRecorder(f'{options.dst_prefix}.mp4')
-        else:
-            recorder = MediaRecorder(f'{options.dst_prefix}.wav')
-
-        # run event loop
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(record_webrtc(options, recorder))
-
-
 # WebRTC must be in its own thread with its own event loop.
-async def record_webrtc(options, recorder):
-    config = RTCConfiguration(iceServers=[])
-    client = WebRTCClient(options.hostname, options.username, options.password, options.sdp_port,
-                          options.sdp_filename, options.cam_ssl_cert, config,
-                          media_recorder=recorder, recorder_type=options.track)
-    await client.start()
-
-    # wait for connection to be established before recording
-    while client.pc.iceConnectionState != 'completed':
-        await asyncio.sleep(0.1)
-
-    # start recording
-    await recorder.start()
-    try:
-        await asyncio.sleep(options.time)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        # close everything
-        await client.pc.close()
-        await recorder.stop()
-
-
-# WebRTC must be in its own thread with its own event loop.
-def start_webrtc(shutdown_flag, options, process_func, recorder=None):
+def start_webrtc(shutdown_flag, options, robot, process_func, recorder=None):
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
 
@@ -187,15 +121,17 @@ def start_webrtc(shutdown_flag, options, process_func, recorder=None):
                           options.sdp_filename, options.cam_ssl_cert, config,
                           media_recorder=recorder)
 
-    asyncio.gather(client.start(), process_func(client, options, shutdown_flag),
+    asyncio.gather(client.start(), process_func(client, options, robot, shutdown_flag),
                    monitor_shutdown(shutdown_flag, client))
     loop.run_forever()
 
-def findObjects(outputs,img):
+async def findObjects(outputs,img,robot):
     hT, wT, cT = img.shape
     humans = outputs.loc[(outputs["class"] == 0) & (outputs["confidence"] >= 0.5)  ]
    
     if not humans.empty : 
+        #Ce bloc la peut dégager si jamais 
+        
         for i in range(len(humans)):
             label = f'{humans.loc[i,"name"]} {humans.loc[i,"confidence"]:.2f}'
 
@@ -207,13 +143,34 @@ def findObjects(outputs,img):
 
             cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,255),2)
             cv2.putText(img,label,(x,y-10), cv2.FONT_HERSHEY_SIMPLEX,0.6,(255,0,255),2)
-            localize_human(img,x,y,w,h)
-            alert_human_detected(img)
+        
+
+        # on récupère l'human avec le plus de confidence
+        mostConfident = humans.iloc[humans['confidence'].idxmax()]
+
+        print(mostConfident)
+
+        xMostConf = int(mostConfident["xmin"])
+        yMostConf = int(mostConfident["ymin"])
+
+        wMostConf = int(mostConfident["xmax"]) - xMostConf
+        hMostConf = int(mostConfident["ymax"]) - yMostConf
+
+        print(f'X most Confident : {xMostConf}')
+
+        await localize_human(img,xMostConf,yMostConf,wMostConf,hMostConf,robot)
+        await alert_human_detected(img)
+
+        cv_image = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+        cv2.imshow('display', cv_image)
+                    
+        cv2.waitKey(1)
 
 
 #Function to localize where the detected human is
 #The full left back being 0 degree and full right back being 360 degrees
-def localize_human(img,x,y,w,h): 
+async def localize_human(img,x,y,w,h,robot): 
+    global moving
     Xcenter = int(x+(w/2))
     Ycenter = int(y+(h/2))
     img_width = int(img.shape[1])
@@ -238,9 +195,17 @@ def localize_human(img,x,y,w,h):
     if position >= 10 and position < 90 :
         print("avant droit")
     if position >= 90 and position <= 180 :
-        print("arriere droit")    
+        print("arriere droit") 
 
-def alert_human_detected(img):
+    print(f'Moving : {moving}')   
+
+    if not moving  :
+        ##On bouge
+        await goTo(robot,dyaw=position)
+    if moving and int(position) == 0 :
+        moving = False
+
+async def alert_human_detected(img):
     print("Human detected, saving image")
     dir_path = os.getcwd()
     print(dir_path)
@@ -252,7 +217,7 @@ def alert_human_detected(img):
     print(cv2.imwrite(filename, img))
 
 # Frame processing occurs; otherwise it waits.
-async def process_frame(client, options, shutdown_flag):
+async def process_frame(client, options,robot, shutdown_flag):
 
     #Define IA
     global model
@@ -290,11 +255,7 @@ async def process_frame(client, options, shutdown_flag):
                     outputs = model(cv_image)
                     outputDf = outputs.pandas().xyxy[0] 
 
-                    findObjects(outputDf,cv_image)
-                    cv_image = cv2.cvtColor(cv_image, cv2.COLOR_RGB2BGR)
-                    cv2.imshow('display', cv_image)
-                    
-                    cv2.waitKey(1)
+                    await findObjects(outputDf,cv_image,robot)
                 continue
 
             frame.to_image().save(f'{options.dst_prefix}-{count}.jpg')  

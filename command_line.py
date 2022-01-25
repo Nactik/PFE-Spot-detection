@@ -12,7 +12,7 @@ import bosdyn.client
 from bosdyn.client.util import (add_common_arguments, setup_logging)
 
 
-from webrtc import WebRTCCommands
+from webrtc2 import WebRTCCommands
 from bosdyn.client import spot_cam
 from bosdyn.client.lease import LeaseClient, LeaseKeepAlive
 from bosdyn.client.robot_command import RobotCommandClient, RobotCommandBuilder, blocking_stand
@@ -20,7 +20,6 @@ from bosdyn.client.robot_state import RobotStateClient
 from bosdyn.client.spot_cam.audio import AudioClient
 from bosdyn.api.spot_cam import audio_pb2
 from connect import connect
-
 
 
 def register_all_commands(subparsers, command_dict):
@@ -62,11 +61,11 @@ def main(args=None):
     robot_audio_client = robot.ensure_client(AudioClient.default_service_name)
 
 
-    #sound = audio_pb2.Sound(name='bark')
-    #with open("assets/dog-bark4.wav", 'rb') as fh:
-    #    data = fh.read()
+    sound = audio_pb2.Sound(name='bark')
+    with open("assets/dog-bark4.wav", 'rb') as fh:
+        data = fh.read()
     
-    #robot_audio_client.load_sound(sound, data)
+    robot_audio_client.load_sound(sound, data)
 
     lease_client, lease = acquireLease(robot);
 
@@ -78,6 +77,7 @@ def main(args=None):
             blocking_stand(robot_command_client)
 
             try:
+                print("Run detection")
                 result = command_dict[options.command].run(robot, options)
                 if args is None and result:
                     # Invoked as a CLI, so print result
@@ -90,7 +90,7 @@ def main(args=None):
                 
     finally :
         print("coucou")
-        #lease_client.return_lease(lease)
+       # lease_client.return_lease(lease)
 
 if __name__ == '__main__':
     main()

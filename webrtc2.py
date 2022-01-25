@@ -11,6 +11,7 @@ import logging
 import sys
 import threading
 import time
+import math
 
 #Added import
 from datetime import datetime
@@ -18,13 +19,8 @@ import os
 ###
 
 from aiortc import (
-    RTCConfiguration,
-    RTCPeerConnection,
-    RTCSessionDescription,
-    MediaStreamTrack,
+    RTCConfiguration
 )
-from aiortc.contrib.media import MediaRecorder
-import requests
 
 import cv2
 import numpy as np
@@ -44,10 +40,6 @@ lastPostion = 0;
 confThreshold = 0.5
 nmsThreshold = 0.3
 
-classesFile = 'model/coco.names'
-classNames = []
-with open(classesFile,'rt') as f:
-    classNames = f.read().rstrip('\n').split('\n')
  
 model = torch.hub.load('../yolov5', 'custom', path='../yolov5/yolov5s.pt', source='local')  # local repo
 
@@ -131,7 +123,12 @@ async def findObjects(outputs,img,robot):
    
     if not humans.empty : 
         #Ce bloc la peut dégager si jamais 
+        #print(humans)
+        middle = int(img.shape[1])/2
         
+        humans["xcenter"] = humans["xmin"] + ((humans["xmax"] - humans["xmin"])/2)
+        humans["distance"] = abs((humans["xcenter"] - middle))
+
         for i in range(len(humans)):
             label = f'{humans.loc[i,"name"]} {humans.loc[i,"confidence"]:.2f}'
 
@@ -146,9 +143,7 @@ async def findObjects(outputs,img,robot):
         
 
         # on récupère l'human avec le plus de confidence
-        mostConfident = humans.iloc[humans['confidence'].idxmax()]
-
-        print(mostConfident)
+        mostConfident = humans.iloc[humans['distance'].idxmin()]
 
         xMostConf = int(mostConfident["xmin"])
         yMostConf = int(mostConfident["ymin"])
@@ -171,18 +166,16 @@ async def findObjects(outputs,img,robot):
 #The full left back being 0 degree and full right back being 360 degrees
 async def localize_human(img,x,y,w,h,robot): 
     global moving
+    
     Xcenter = int(x+(w/2))
-    Ycenter = int(y+(h/2))
     img_width = int(img.shape[1])
-    img_height = int(img.shape[0])
-    if y < img_height/2 :
-        print("avant (caméra avant)")
-    #if y > img_height/2 :
+
     ratio = Xcenter / img_width
     
     #La position devant est 0°
     position = ratio*360 - 180
 
+    """
     print(f'Humain détecté au degré : {position}')
     if position < -180 :
         print("error")
@@ -196,13 +189,13 @@ async def localize_human(img,x,y,w,h,robot):
         print("avant droit")
     if position >= 90 and position <= 180 :
         print("arriere droit") 
-
+    """
     print(f'Moving : {moving}')   
 
     if not moving  :
         ##On bouge
         await goTo(robot,dyaw=position)
-    if moving and int(position) == 0 :
+    if moving and int(position)>-5 and int(position) <5 :
         moving = False
 
 async def alert_human_detected(img):

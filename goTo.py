@@ -24,7 +24,9 @@ isDone = False
 
 def checkDoneMoving(result):
     global cmd_id
+    webrtc2.moving = True
     cmd_id = result.result()
+
     print(f"Command done, cmd_id : {cmd_id}")
 
 def checkFeedBack(result):
@@ -47,13 +49,12 @@ def checkFeedBack(result):
 async def goTo(robot,dx: float = 0,dy: float = 0, dyaw: float = 0,frame=ODOM_FRAME_NAME,stairs:bool=False):
     global cmd_id
     global hasFinishedMoving
-
-    print("goto")
     # Setup clients for the robot state and robot command services.
+
+    print(f"JE VAIS AU DEGREE : {dyaw}")
     
     robot_state_client = robot.ensure_client(RobotStateClient.default_service_name)
     robot_command_client = robot.ensure_client(RobotCommandClient.default_service_name)
-
 
     transforms = robot_state_client.get_robot_state().kinematic_state.transforms_snapshot
 
@@ -79,9 +80,8 @@ async def goTo(robot,dx: float = 0,dy: float = 0, dyaw: float = 0,frame=ODOM_FRA
     while not cmd_id:
         await asyncio.sleep(0.1)
 
-    webrtc2.moving = True
 
-
+## Not used for now
 async def relative_move(dx, dy, dyaw, frame_name, robot_command_client, robot_state_client, stairs=False):
     transforms = robot_state_client.get_robot_state().kinematic_state.transforms_snapshot
 

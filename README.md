@@ -78,10 +78,10 @@ python3 estop-nogui.py --username <user> --password <password> <IP>
 
 Ce terminal va permettre de lancer le programme principale : 
 
-- Naviguer vers la racine du dossier `PFE-spot-infive`
+- Naviguer vers la racine du dossier `PFE-Spot-infive`
 
 ```bash
-cd PFE-spot-infive
+cd PFE-Spot-infive
 ```
 - Executer le programme avec la commande suivante :
 

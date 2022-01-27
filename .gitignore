@@ -1,4 +1,4 @@
 .env
 *.weights
 *.old
-webrtc.txt
+webrtc.log

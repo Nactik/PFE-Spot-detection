@@ -28,6 +28,7 @@ import torch
 import pandas as pd
 from bosdyn.client.command_line import (Command, Subcommands)
 from webrtc_client import WebRTCClient
+from goTo import signal
 from goTo import goTo
 from dotenv import load_dotenv
 
@@ -35,6 +36,7 @@ from dotenv import load_dotenv
 logging.basicConfig(level=logging.DEBUG, filename='webrtc.log', filemode='a+')
 STDERR = logging.getLogger('stderr')
 
+light = False
 moving = False
 whT = 320
 lastPostion = 0;
@@ -90,6 +92,9 @@ class WebRTCSaveCommand():
             shutdown_flag.set()
             webrtc_thread.join(timeout=3.0)
 
+
+
+
 # WebRTC must be in its own thread with its own event loop.
 def start_webrtc(shutdown_flag, options, robot, process_func, recorder=None):
     loop = asyncio.new_event_loop()
@@ -105,8 +110,18 @@ def start_webrtc(shutdown_flag, options, robot, process_func, recorder=None):
     loop.run_forever()
 
 async def findObjects(outputs,img,robot):
+    global light
     hT, wT, cT = img.shape
     humans = outputs.loc[(outputs["class"] == 0) & (outputs["confidence"] >= 0.5)  ]
+
+    if not humans.empty and not light :
+        await signal(robot,1)
+        light = True
+    
+    if humans.empty and light:
+        await signal(robot,2)
+        light = False
+
    
     if not humans.empty : 
         #Ce bloc la peut dégager si jamais 

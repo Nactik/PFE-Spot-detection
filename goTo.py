@@ -12,6 +12,9 @@ from string import ascii_uppercase
 import time
 from bosdyn.api.basic_command_pb2 import RobotCommandFeedbackStatus
 import bosdyn.client.util
+from bosdyn.client.spot_cam.audio import AudioClient
+from bosdyn.api.spot_cam import audio_pb2
+from bosdyn.client.spot_cam.lighting import LightingClient
 from bosdyn.client.robot_state import RobotStateClient
 from bosdyn.client.robot_command import RobotCommandClient, RobotCommandBuilder
 from bosdyn.client import math_helpers
@@ -45,6 +48,32 @@ def checkFeedBack(result):
         run_webrtc.moving = False
         hasFinishedMoving = True
 
+
+#Déclanche le signal souhaité :
+#int signal : 1 pour l'aboiement, 1 allume les LEDs, 2 eteint les LEDs
+async def signal(robot,signal):
+    
+    if signal == 1:
+        print("déclanchement aboiement")
+        robot_audio_client = robot.ensure_client(AudioClient.default_service_name)
+        robot_audio_client.set_volume(100)
+        sound = audio_pb2.Sound(name='bark')
+        gain = 0.5
+        if gain:
+            gain = max(gain, 0.0)
+
+        robot_audio_client.play_sound(sound, gain)
+
+
+    if signal == 1:
+        print("déclanchement lumière")
+        robot_light_client = robot.ensure_client(LightingClient.default_service_name).set_led_brightness(
+            float(i) for i in ['1', '1', '1', '1'])
+
+    if signal == 2:
+        print("Extinction lumière")
+        robot_light_client = robot.ensure_client(LightingClient.default_service_name).set_led_brightness(
+            float(i) for i in ['0', '0', '0', '0'])
 
 
 async def goTo(robot,dx: float = 0,dy: float = 0, dyaw: float = 0,frame=ODOM_FRAME_NAME,stairs:bool=False):

@@ -124,8 +124,7 @@ async def findObjects(outputs,img,robot):
 
    
     if not humans.empty : 
-        #Ce bloc la peut dégager si jamais 
-        #print(humans)
+
         middle = int(img.shape[1])/2
         
         humans["xcenter"] = humans["xmin"] + ((humans["xmax"] - humans["xmin"])/2)
@@ -134,18 +133,20 @@ async def findObjects(outputs,img,robot):
         for i in range(len(humans)):
             label = f'{humans.loc[i,"name"]} {humans.loc[i,"confidence"]:.2f}'
 
+            ## On récupère les coordonnées de chaque humains
             x = int(humans.loc[i,"xmin"])
             y = int(humans.loc[i,"ymin"])
 
             w = int(humans.loc[i,"xmax"]) - x
             h = int(humans.loc[i,"ymax"]) - y
 
+            ## On dessine les bounding box autour d'eux
             cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,255),2)
             cv2.putText(img,label,(x,y-10), cv2.FONT_HERSHEY_SIMPLEX,0.6,(255,0,255),2)
         
 
         # on récupère l'human avec le plus de confidence
-        mostConfident = humans.iloc[humans['distance'].idxmin()]
+        mostConfident = humans.iloc[humans['confidence'].idxmax()]
 
         xMostConf = int(mostConfident["xmin"])
         yMostConf = int(mostConfident["ymin"])
@@ -158,6 +159,7 @@ async def findObjects(outputs,img,robot):
         await localize_human(img,xMostConf,yMostConf,wMostConf,hMostConf,robot)
         await alert_human_detected(img)
 
+    # On affiche l'image sur l'ecran
     cv_image = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
     cv2.imshow('display', cv_image)
                 
@@ -169,12 +171,12 @@ async def findObjects(outputs,img,robot):
 async def localize_human(img,x,y,w,h,robot): 
     global moving
     
+    # On calcul la position en degré de la personne
     Xcenter = int(x+(w/2))
     img_width = int(img.shape[1])
 
+
     ratio = Xcenter / img_width
-    
-    #La position devant est 0°
     position = ratio*360 - 180
 
     """
@@ -194,16 +196,21 @@ async def localize_human(img,x,y,w,h,robot):
     """
     print(f'Moving : {moving}')   
 
+    # On check si le robot n'est pas déjà en mouvement
     if not moving  :
         ##On bouge
         await goTo(robot,dyaw=position)
+
+    # SOLUTION 1 pour tester si le robot à fini son mouvement
+    # On check si le robot est en train de bouger et si la position de la personne est revenue à 0 (avec un offset)
     if moving and int(position)>-5 and int(position) <5 :
         moving = False
 
+## Fonction pour enregistrer l'image lors d'une détection
 async def alert_human_detected(img):
     print("Human detected, saving image")
     dir_path = os.getcwd()
-    print(dir_path)
+    #print(dir_path)
     #dir_path = dir_path.replace(os.sep, '/')
     dt_string = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
     filename = dir_path+"/images/human_"+dt_string+".png"
@@ -211,6 +218,7 @@ async def alert_human_detected(img):
     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
     print(cv2.imwrite(filename, img))
 
+# Fonction qui récupère chaque frame de la SpotCam
 # Frame processing occurs; otherwise it waits.
 async def process_frame(client, options,robot, shutdown_flag):
 
@@ -230,25 +238,28 @@ async def process_frame(client, options,robot, shutdown_flag):
     start_time = time.time()
     while asyncio.get_event_loop().is_running():
         try:
+            # On récupère la frame
             frame = await client.video_frame_queue.get()
             
             fpsCount += 1
+            ## On prend 1 frame sur 10 pour limiter le flux
             if fpsCount%10 == 0:
+                ## On resize l'image
                 pil_image = frame.to_image()
                 cv_image = np.array(pil_image)
                 scale_percent = 60 #percent
                 width = int(cv_image.shape[1] * scale_percent / 100)
                 height = int(cv_image.shape[0] * scale_percent / 100)
                 dim = (width, height)
-                #cv_image = cv2.resize(cv_image, dim, interpolation=cv2.INTER_AREA)
+                #cv_image = cv2.resiz e(cv_image, dim, interpolation=cv2.INTER_AREA)
                 Imwidth = cv_image.shape[1]
                 Imheight = cv_image.shape[0]
                 x = 400
                 cv_image = cv_image[x : Imheight, 0 : Imwidth]
                 
+                ## On lance l'analyse de l'image par l'IA (fonction model)
                 outputs = model(cv_image)
                 outputDf = outputs.pandas().xyxy[0] 
-
 
                 await findObjects(outputDf,cv_image,robot)
             continue

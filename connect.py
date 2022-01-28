@@ -3,6 +3,7 @@ import bosdyn.client
 from dotenv import load_dotenv
 
 
+## Fonction pour ce connecter au robot
 
 def connect(sdk):
     load_dotenv()

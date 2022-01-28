@@ -37,7 +37,7 @@ python3 -m pip install -r requierements.txt
 
 ### Configuration de l'environnement
 
-Afin de pouvoir se connecter au robot spot, il est nécessaire de completer les informations de connexion au sein du fichier `.env` présent dans à la racine de ce répo selon le format suivant :
+Afin de pouvoir se connecter au robot spot, il est nécessaire créer un fichier  nommé `.env` à la racine de ce répo et de compléter les informations de connextion selon le format suivant :
 
 ```bash
 ROBOT_USERNAME=user

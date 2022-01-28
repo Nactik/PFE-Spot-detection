@@ -7,6 +7,7 @@
 """Command the robot to go to an offset position using a trajectory command."""
 
 from curses.ascii import NUL
+from curses.panel import bottom_panel
 from glob import glob
 from string import ascii_uppercase
 import time
@@ -76,12 +77,16 @@ async def signal(robot,signal):
             float(i) for i in ['0', '0', '0', '0'])
 
 
+# Donne un ordre de mouvement au robot 
+# dx : nombre de mettre sur l'axe x
+# dy : nombre de mettre sur l'axe y
+# dyaw : nombre de dégré sur l'axe yaxw
+# frame : origine du repère sur le robot
+# stairs : Boolean indiquant s'il faut utiliser le mode stairs ou non
 async def goTo(robot,dx: float = 0,dy: float = 0, dyaw: float = 0,frame=ODOM_FRAME_NAME,stairs:bool=False):
     global cmd_id
     global hasFinishedMoving
     # Setup clients for the robot state and robot command services.
-
-    print(f"JE VAIS AU DEGREE : {dyaw}")
 
     cmd_id = None
     
@@ -104,14 +109,15 @@ async def goTo(robot,dx: float = 0,dy: float = 0, dyaw: float = 0,frame=ODOM_FRA
         goal_x=out_tform_goal.x, goal_y=out_tform_goal.y, goal_heading=out_tform_goal.angle,
         frame_name=frame, params=RobotCommandBuilder.mobility_params(stair_hint=stairs))
     end_time = 10.0
+
+    ## On lance la commande de façon asynchrone
     cmdFuture = robot_command_client.robot_command_async(lease=None, command=robot_cmd,
                                                 end_time_secs=time.time() + end_time)
 
     cmdFuture.add_done_callback(checkDoneMoving)
 
-    while not cmd_id:
-        await asyncio.sleep(0.1)
-
+    ## SOLUTION 2 : Check si le robot à fini son mouvement
+    ## Cette fonction est plus précise mais elle est bloquante
     """
     hasFinishedMoving = False
 

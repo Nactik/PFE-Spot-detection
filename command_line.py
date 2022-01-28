@@ -26,23 +26,26 @@ def main(args=None):
     sdk = bosdyn.client.create_standard_sdk('Spot CAM Client')
     spot_cam.register_all_service_clients(sdk)
 
+    ## On se connecte au robot
     robot = connect(sdk)
 
+    ## On check si le robot est bien e-stoppé par protection
     assert not robot.is_estopped(), "Robot is estopped. Please use an external E-Stop client, " \
                                 "such as the estop SDK example, to configure E-Stop."
 
-    ## TODO : Mettre dans une fonction à part (setup() ??)
+    ## On setup les clients necessaire
     robot_state_client = robot.ensure_client(RobotStateClient.default_service_name)
     robot_command_client = robot.ensure_client(RobotCommandClient.default_service_name)
     robot_audio_client = robot.ensure_client(AudioClient.default_service_name)
 
-
+    ## On load le son d'aboiement
     sound = audio_pb2.Sound(name='bark')
     with open("assets/dog-bark4.wav", 'rb') as fh:
         data = fh.read()
     
     robot_audio_client.load_sound(sound, data)
 
+    ## Recupération de la lease
     lease_client, lease = acquireLease(robot)
 
     with LeaseKeepAlive(lease_client, return_at_exit=True):
